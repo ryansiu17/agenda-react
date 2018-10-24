@@ -16,7 +16,7 @@
   border-radius: 25px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
   display: grid;
-  grid-template-columns: minmax(40px, 1fr) 4fr;
+  grid-template-columns: 1fr 4fr;
   grid-template-areas: "sidebar main";
 }
 
@@ -45,7 +45,7 @@
   background-color: $sidebar-color;
   border-radius: 22px 0px 0px 22px;
   display: grid;
-  grid-template-columns: 10px 1fr 10px;
+  grid-template-columns: minmax(0px, 10px) 1fr minmax(0px, 10px);
   grid-template-rows: 50px 1fr;
   grid-template-areas: ". sidebarHeader ." ". sidebarBody .";
 }
@@ -154,15 +154,18 @@
 }
 .chip {
   display: inline-flex;
+  border-radius: 12px;
   background-color: pink;
-  border-radius: 10px;
-  height: 36px;
   min-width: 50px;
-  padding: 5px;
+  padding: 6px;
   margin: 5px;
 }
 .chipText {
   color: white;
+  vertical-align: middle;
   font-size: 1.1rem;
   font-weight: bolder;
+}
+.chipDescription {
+  font-weight: 400;
 }

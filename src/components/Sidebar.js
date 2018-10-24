@@ -12,6 +12,7 @@ class Sidebar extends React.Component {
             placeholder=" Title..."
             name="title"
             className="title"
+            value={this.props.titleVal}
           />
           <input
             onChange={this.props.changeDescription}
@@ -19,6 +20,7 @@ class Sidebar extends React.Component {
             placeholder=" Description..."
             name="description"
             className="description"
+            value={this.props.descVal}
           />
           <input
             onChange={this.props.changeTime}
@@ -26,6 +28,7 @@ class Sidebar extends React.Component {
             placeholder=" Time..."
             name="time"
             className="time"
+            value={this.props.timeVal}
           />
           <button className="submit">Add Event</button>
         </form>
