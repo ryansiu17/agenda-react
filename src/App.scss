@@ -1,0 +1,168 @@
+@import "./variables.scss";
+
+.background {
+  background-color: $background-color;
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 30px 1fr 30px;
+  grid-template-rows: 30px 1fr 30px;
+  grid-template-areas: ". . ." ". mainBody ." ". . .";
+}
+
+.mainBody {
+  grid-area: mainBody;
+  background-color: $app-color;
+  border-radius: 25px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  display: grid;
+  grid-template-columns: minmax(40px, 1fr) 4fr;
+  grid-template-areas: "sidebar main";
+}
+
+.main {
+  grid-area: main;
+  border-radius: 25px;
+  display: grid;
+  grid-template-rows: 50px 1fr 20px;
+  grid-template-columns: 20px 1fr 20px;
+  grid-template-areas: ". mainHeader ." ". mainEvents ." ". . .";
+}
+
+.mainHeader {
+  grid-area: mainHeader;
+  text-align: left;
+  color: $sidebar-color;
+  margin-top: 15px;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+.mainEvents {
+  grid-area: mainEvents;
+}
+.sidebar {
+  grid-area: sidebar;
+  background-color: $sidebar-color;
+  border-radius: 22px 0px 0px 22px;
+  display: grid;
+  grid-template-columns: 10px 1fr 10px;
+  grid-template-rows: 50px 1fr;
+  grid-template-areas: ". sidebarHeader ." ". sidebarBody .";
+}
+
+.sidebarHeader {
+  border-radius: 20px 0px 0px 0px;
+  grid-area: sidebarHeader;
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  margin-top: 10px;
+  border-bottom: 1px solid white;
+  color: white;
+}
+
+.sidebarBody {
+  grid-area: sidebarBody;
+  color: white;
+  border: none;
+  display: grid;
+  grid-template-columns: 20px 1fr 20px;
+  grid-template-rows: 20px 1fr 1fr 1fr 2fr 1fr 20px;
+  grid-template-areas: ". . ." ". title ." ". description ." ". time ." ". . ." ". submit ." ". . .";
+}
+
+.title {
+  grid-area: title;
+  background-color: $sidebar-color;
+  border-radius: 10px;
+  margin-top: 40px;
+  transition: background-color 0.2s ease-out;
+  border: none;
+  color: white;
+  font-size: 1.3rem;
+  text-indent: 10px;
+}
+.title:focus {
+  background-color: #333d53;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  border: none;
+}
+.title:hover {
+  background-color: #333d53;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  cursor: pointer;
+}
+
+.description {
+  grid-area: description;
+  background-color: $sidebar-color;
+  border-radius: 10px;
+  margin-top: 40px;
+  transition: background-color 0.2s ease-out;
+  border: none;
+  color: white;
+  font-size: 1.3rem;
+  text-indent: 10px;
+}
+.description:focus {
+  background-color: #333d53;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  border: none;
+}
+.description:hover {
+  background-color: #333d53;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  cursor: pointer;
+}
+
+.time {
+  grid-area: time;
+  background-color: $sidebar-color;
+  border-radius: 10px;
+  margin-top: 40px;
+  transition: background-color 0.2s ease-out;
+  border: none;
+  color: white;
+  font-size: 1.3rem;
+  text-indent: 10px;
+}
+.time:focus {
+  background-color: #333d53;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  border: none;
+}
+.time:hover {
+  background-color: #333d53;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  cursor: pointer;
+}
+
+.submit {
+  grid-area: submit;
+  border-radius: 10px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: white;
+  background-color: $sidebar-color;
+  transition: background-color 0.2s ease-out;
+  border: none;
+}
+.submit:hover {
+  background-color: #526388;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  cursor: pointer;
+}
+.chip {
+  display: inline-flex;
+  background-color: pink;
+  border-radius: 10px;
+  height: 36px;
+  min-width: 50px;
+  padding: 5px;
+  margin: 5px;
+}
+.chipText {
+  color: white;
+  font-size: 1.1rem;
+  font-weight: bolder;
+}
