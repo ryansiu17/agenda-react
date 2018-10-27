@@ -27,6 +27,7 @@
   grid-template-rows: 50px 1fr 20px;
   grid-template-columns: 20px 1fr 20px;
   grid-template-areas: ". mainHeader ." ". mainEvents ." ". . .";
+  max-height: 92vh;
 }
 
 .mainHeader {
@@ -34,11 +35,17 @@
   text-align: left;
   color: $sidebar-color;
   margin-top: 15px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
   font-size: 1.2rem;
   font-weight: 700;
 }
 .mainEvents {
   grid-area: mainEvents;
+  overflow: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 .sidebar {
   grid-area: sidebar;
@@ -67,7 +74,7 @@
   border: none;
   display: grid;
   grid-template-columns: 20px 1fr 20px;
-  grid-template-rows: 20px 1fr 1fr 1fr 2fr 1fr 20px;
+  grid-template-rows: 20px 1fr 1fr 1fr 1.5fr 1fr 20px;
   grid-template-areas: ". . ." ". title ." ". description ." ". time ." ". . ." ". submit ." ". . .";
 }
 
@@ -156,7 +163,6 @@
   display: inline-flex;
   border-radius: 12px;
   background-color: pink;
-  min-width: 50px;
   padding: 6px;
   margin: 5px;
 }

@@ -30,6 +30,7 @@ class Sidebar extends React.Component {
             className="time"
             value={this.props.timeVal}
           />
+
           <button className="submit">Add Event</button>
         </form>
       </div>
