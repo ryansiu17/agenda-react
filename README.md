@@ -4,4 +4,4 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 Simple application I figured would be a decent way to work with .map and object arrays in React.
 
 ## Demo Images
-![Image of App](src/img/agenda-demo.png)
+![Image of App](src/img/agena-demo.png)
