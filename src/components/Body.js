@@ -15,20 +15,24 @@ class Body extends React.Component {
       {
         title: "style time",
         description: "perhaps make a datepicker",
-        time: "900"
+        hour: "1",
+        minute: "00",
+        ampm: "AM"
       },
-      { title: "peen", description: "big descrption nanna", time: "wee woo" }
-    ],
-    niceColors: [
-      "#4c588a",
-      "#8d4646",
-      "#448d54",
-      "#8b5e2a",
-      "#914680",
-      "#3e2042",
-      "#4d2020",
-      "#1f1e42",
-      "#386472"
+      {
+        title: "style time",
+        description: "perhaps make a datepicker",
+        hour: "2",
+        minute: "00",
+        ampm: "AM"
+      },
+      {
+        title: "style time",
+        description: "perhaps make a datepicker",
+        hour: "1",
+        minute: "00",
+        ampm: "PM"
+      }
     ],
     blueColors: [
       "#3445df",
@@ -51,14 +55,12 @@ class Body extends React.Component {
       title: e.target.value
     });
   };
-
   changeDescription = e => {
     e.preventDefault();
     this.setState({
       description: e.target.value
     });
   };
-
   changeHour = e => {
     e.preventDefault();
     this.setState({
@@ -78,23 +80,10 @@ class Body extends React.Component {
     });
   };
 
-  getRandomColor() {
-    var letters = "0123456789ABCDEF";
-    var color = "#";
-    for (var i = 0; i < 6; i++) {
-      color += letters[Math.floor(Math.random() * 16)];
-    }
-    return color;
-  }
-
   getRandomBlueColor = () => {
     let blueColors = this.state.blueColors;
     return (blueColors =
       blueColors[Math.floor(Math.random() * blueColors.length)]);
-  };
-  getRandomNiceColor = () => {
-    let niceColors = this.state.niceColors;
-    return niceColors[Math.floor(Math.random() * niceColors.length)];
   };
 
   submitEvents = e => {
