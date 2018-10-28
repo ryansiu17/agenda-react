@@ -93,6 +93,7 @@
   background-color: #333d53;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
   border: none;
+  outline-width: 0;
 }
 .title:hover {
   background-color: #333d53;
@@ -115,6 +116,7 @@
   background-color: #333d53;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
   border: none;
+  outline-width: 0;
 }
 .description:hover {
   background-color: #333d53;
@@ -124,24 +126,11 @@
 
 .time {
   grid-area: time;
-  background-color: $sidebar-color;
-  border-radius: 10px;
   margin-top: 40px;
-  transition: background-color 0.2s ease-out;
-  border: none;
-  color: white;
-  font-size: 1.3rem;
-  text-indent: 10px;
-}
-.time:focus {
-  background-color: #333d53;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-  border: none;
-}
-.time:hover {
-  background-color: #333d53;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-  cursor: pointer;
+  justify-self: center;
+  display: grid;
+  grid-template-columns: 2fr 3fr 3fr;
+  grid-template-areas: "hour minute ampm";
 }
 
 .submit {
@@ -159,6 +148,9 @@
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
   cursor: pointer;
 }
+.submit:focus {
+  outline-width: 0;
+}
 .chip {
   display: inline-flex;
   border-radius: 12px;
@@ -174,4 +166,66 @@
 }
 .chipDescription {
   font-weight: 400;
+}
+
+.hour {
+  grid-area: hour;
+  border-radius: 10px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: white;
+  transition: background-color 0.2s ease-out;
+  border: none;
+  background-color: $sidebar-color;
+}
+
+.hour:hover {
+  background-color: #333d53;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  cursor: pointer;
+}
+
+.hour:focus {
+  outline-width: 0;
+}
+
+.hour:after {
+  display: none;
+}
+.minute {
+  grid-area: minute;
+  border-radius: 10px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: white;
+  transition: background-color 0.2s ease-out;
+  border: none;
+  background-color: $sidebar-color;
+}
+.minute:focus {
+  outline-width: 0;
+}
+.minute:hover {
+  background-color: #333d53;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  cursor: pointer;
+}
+
+.ampm {
+  grid-area: ampm;
+  border-radius: 10px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: white;
+  transition: background-color 0.2s ease-out;
+  border: none;
+  background-color: $sidebar-color;
+}
+.ampm:focus {
+  outline-width: 0;
+}
+.ampm:hover {
+  background-color: #333d53;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  cursor: pointer;
 }

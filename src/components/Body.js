@@ -7,7 +7,9 @@ class Body extends React.Component {
     calenderEvents: [],
     title: "",
     description: "",
-    time: "",
+    hour: "1",
+    minute: "00",
+    ampm: "AM",
     error: undefined,
     theData: [
       {
@@ -57,10 +59,22 @@ class Body extends React.Component {
     });
   };
 
-  changeTime = e => {
+  changeHour = e => {
     e.preventDefault();
     this.setState({
-      time: e.target.value
+      hour: e.target.value
+    });
+  };
+  changeMinute = e => {
+    e.preventDefault();
+    this.setState({
+      minute: e.target.value
+    });
+  };
+  changeAmpm = e => {
+    e.preventDefault();
+    this.setState({
+      ampm: e.target.value
     });
   };
 
@@ -90,7 +104,9 @@ class Body extends React.Component {
     const newArray = {
       title: this.state.title,
       description: this.state.description,
-      time: this.state.time,
+      hour: this.state.hour,
+      minute: this.state.minute,
+      ampm: this.state.ampm,
       key: keyVal,
       color: randColor
     };
@@ -98,7 +114,9 @@ class Body extends React.Component {
       calenderEvents: [...this.state.calenderEvents, newArray],
       title: "",
       description: "",
-      time: ""
+      hour: "1",
+      minute: "00",
+      ampm: "AM"
     });
   };
 
@@ -108,11 +126,15 @@ class Body extends React.Component {
         <Sidebar
           changeTitle={this.changeTitle}
           changeDescription={this.changeDescription}
-          changeTime={this.changeTime}
+          changeHour={this.changeHour}
+          changeMinute={this.changeMinute}
+          changeAmpm={this.changeAmpm}
           submitEvents={this.submitEvents}
           titleVal={this.state.title}
           descVal={this.state.description}
-          timeVal={this.state.time}
+          hourVal={this.state.hour}
+          minuteVal={this.state.minute}
+          ampmVal={this.state.ampm}
         />
         <Main
           calenderEvents={this.state.calenderEvents}

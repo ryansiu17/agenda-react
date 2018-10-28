@@ -7,13 +7,15 @@ const Main = props => {
       <div className="mainHeader">Scheduled Events: </div>
       <div className="mainEvents">
         {props.calenderEvents.map(
-          ({ title, description, time, key, color }) => {
+          ({ title, description, hour, minute, ampm, key, color }) => {
             return (
               <Chip
                 key={key}
                 title={title}
                 description={description}
-                time={time}
+                hour={hour}
+                minute={minute}
+                ampm={ampm}
                 color={color}
               />
             );
