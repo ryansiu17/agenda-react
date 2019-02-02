@@ -49,6 +49,13 @@ class Body extends React.Component {
       "#2e434d"
     ]
   };
+  deleteChip = key => {
+    let newArray = [].concat(this.state.calenderEvents);
+    newArray = newArray.filter(x => x.key !== key);
+    this.setState({
+      calenderEvents: newArray
+    });
+  };
   changeTitle = e => {
     e.preventDefault();
     this.setState({
@@ -128,6 +135,7 @@ class Body extends React.Component {
         <Main
           calenderEvents={this.state.calenderEvents}
           theData={this.state.theData}
+          deleteChip={this.deleteChip}
         />
       </div>
     );

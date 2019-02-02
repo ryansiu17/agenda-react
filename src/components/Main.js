@@ -4,16 +4,17 @@ import Chip from "./Chip";
 const Main = props => {
   function compareTime(a, b) {
     let aTime =
-      parseInt(a.hour, 10) * 100 +
-      parseInt(a.minute, 10) +
+      parseInt(a.hour) * 100 +
+      parseInt(a.minute) +
       (a.ampm === "PM" ? 1200 : 0);
     let bTime =
-      parseInt(b.hour, 10) * 100 +
-      parseInt(b.minute, 10) +
+      parseInt(b.hour) * 100 +
+      parseInt(b.minute) +
       (b.ampm === "PM" ? 1200 : 0);
 
     return aTime - bTime;
   }
+
   const sortedArray = [].concat(props.calenderEvents).sort(compareTime);
   return (
     <div className="main">
@@ -24,12 +25,14 @@ const Main = props => {
             return (
               <Chip
                 key={key}
+                id={key}
                 title={title}
                 description={description}
                 hour={hour}
                 minute={minute}
                 ampm={ampm}
                 color={color}
+                deleteChip={props.deleteChip}
               />
             );
           }

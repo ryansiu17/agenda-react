@@ -1,5 +1,11 @@
 @import "./variables.scss";
 
+select {
+  /* for Firefox */
+  -moz-appearance: none;
+  /* for Chrome */
+  -webkit-appearance: none;
+}
 .background {
   background-color: $background-color;
   width: 100vw;
@@ -166,6 +172,19 @@
 }
 .chipDescription {
   font-weight: 400;
+}
+.chipButton {
+  color: white;
+  opacity: 0.2;
+  border: none;
+  border-radius: 15px;
+  transition: opacity 0.2s ease-out;
+}
+.chipButton:hover {
+  opacity: 1;
+}
+.chipButton:focus {
+  outline-width: 0;
 }
 
 .hour {
